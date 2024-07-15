@@ -1,0 +1,21 @@
+class Solution {
+    public int buyChoco(int[] prices, int money) {
+        int c=0;
+        int temp=money;
+        Arrays.sort(prices);
+        for(int i=0;i<prices.length;i++){
+             
+           money=money-prices[i];
+           if(money==temp|| money<0)
+           return temp;
+           c++;
+           if (c==2)
+            return money;
+
+            
+        }
+        
+        return money;
+
+    }
+}
